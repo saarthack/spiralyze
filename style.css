@@ -2007,19 +2007,15 @@ footer h4 a {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
+
+        align-items: flex-start;
+
         flex-direction: column;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
+
+        justify-content: flex-start;
         position: relative;
         background-color: #194d44de;
-
+        height: auto;
         padding: 0 5vw;
         min-height: 92vh;
         text-align: center;
@@ -2118,7 +2114,9 @@ footer h4 a {
         font-size: 5vw;
         outline: none;
     }
-
+    .contact-card input::placeholder{
+        font-size: 4vw;
+    }
     .contact-card input:nth-last-child(2) {
         width: 100%;
         /* background-color: red; */
