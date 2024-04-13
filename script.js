@@ -2,6 +2,7 @@ const swiperContainer = document.querySelector('.swiper-container');
 const swipers = document.querySelectorAll('.swiper');
 const nextBtn = document.querySelector('.swiper-nextbtn');
 const prevBtn = document.querySelector('.swiper-prevbtn');
+const paginationDots = document.querySelectorAll('.pagination-dot');
 
 let currentIndex = 0;
 
@@ -17,6 +18,11 @@ function goToSlide(index) {
 
   swiperContainer.style.transform = `translateX(${translateX}px)`;
   currentIndex = index;
+
+  // Update active pagination dot
+  paginationDots.forEach((dot, idx) => {
+    dot.classList.toggle('active', idx === currentIndex);
+  });
 }
 
 nextBtn.addEventListener('click', () => {
@@ -25,4 +31,10 @@ nextBtn.addEventListener('click', () => {
 
 prevBtn.addEventListener('click', () => {
   goToSlide(currentIndex - 1);
+});
+
+paginationDots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    goToSlide(index);
+  });
 });
